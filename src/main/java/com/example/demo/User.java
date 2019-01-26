@@ -10,10 +10,10 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
+    public long id;
 
     @Column(name = "login")
-    private String login;
+    public String login;
 
     @Column(name = "password")
     private String password;

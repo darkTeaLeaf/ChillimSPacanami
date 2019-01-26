@@ -28,13 +28,13 @@ public class AdvertisementModel {
     @Column(name = "description")
     private String description;
 
-    @Column(name = "date")
-    @Type(type = "com.baeldung.hibernate.customtypes.LocalDateStringType")
-    private LocalDate date;
-
-    @Column(name = "dateOfPublication")
-    @Type(type = "com.baeldung.hibernate.customtypes.LocalDateStringType")
-    private LocalDate dateOfPublication;
+//    @Column(name = "date")
+//    @Type(type = "com.baeldung.hibernate.customtypes.LocalDateStringType")
+//    private LocalDate date;
+//
+//    @Column(name = "dateOfPublication")
+//    @Type(type = "com.baeldung.hibernate.customtypes.LocalDateStringType")
+//    private LocalDate dateOfPublication;
 
     @Column(name = "picture")
     private String picture;
