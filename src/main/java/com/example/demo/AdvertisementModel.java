@@ -1,8 +1,9 @@
 package com.example.demo;
 
+import org.hibernate.annotations.Type;
+
 import javax.persistence.*;
 import java.time.LocalDate;
-import org.hibernate.annotations.Type;
 
 @Entity
 @Table(name = "advertisements")
@@ -13,7 +14,7 @@ public class AdvertisementModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
+    public long id;
 
     @Column(name = "title")
     private String title;
