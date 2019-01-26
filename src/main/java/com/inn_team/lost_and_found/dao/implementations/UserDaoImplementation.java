@@ -13,7 +13,7 @@ import java.util.List;
 @Service
 public class UserDaoImplementation implements ModifyByLibrarian<User> {
     public static final String REMOVE_USER_HAS_CHECKOUTS_EXCEPTION = "User should return all documents before deleting";
-    private static final Logger logger = (Logger) LoggerFactory.getLogger(BookDaoImplementation.class);
+    private static final Logger logger = (Logger) LoggerFactory.getLogger(com.project.glib.dao.implementations.BookDaoImplementation.class);
     private static final String TYPE = User.TYPE;
     private static final String ADD_USER = TYPE + ADD;
     private static final String UPDATE_USER = TYPE + UPDATE;
