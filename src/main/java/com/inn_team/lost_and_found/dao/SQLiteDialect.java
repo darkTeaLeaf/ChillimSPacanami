@@ -1,4 +1,4 @@
-package com.project.glib.dao;
+package com.inn_team.lost_and_found.dao;
 
 import org.hibernate.dialect.Dialect;
 import org.hibernate.dialect.function.SQLFunctionTemplate;
