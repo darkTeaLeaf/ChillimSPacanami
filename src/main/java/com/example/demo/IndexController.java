@@ -21,7 +21,7 @@ public class IndexController {
         this.userService = userService;
     }
 
-    @PostMapping("/")
+        @PostMapping("/")
     public ModelAndView index(User user) {
         System.out.print(user.login);
         userService.addUser(user);
@@ -30,11 +30,20 @@ public class IndexController {
         return new ModelAndView("index", model);
     }
 
-    @GetMapping("/")
-    public ModelAndView index() {
-        Map<String, Iterable> model = new HashMap<>();
-        Iterable <User> list = userService.fetchAll();
-        model.put("name", list);
-        return new ModelAndView("index", model);
-    }
+//    @PostMapping("/")
+//    public ModelAndView index(User user) {
+//        System.out.print(user.login);
+//        userService.addUser(user);
+//        Map<String, String> model = new HashMap<>();
+//        model.put("name", "Alexey");
+//        return new ModelAndView("index", model);
+//    }
+//
+//    @GetMapping("/")
+//    public ModelAndView index() {
+//        Map<String, Iterable> model = new HashMap<>();
+//        Iterable <User> list = userService.fetchAll();
+//        model.put("name", list);
+//        return new ModelAndView("index", model);
+//    }
 }
