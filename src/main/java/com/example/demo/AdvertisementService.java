@@ -18,4 +18,12 @@ public class AdvertisementService {
     public void deleteById(AdvertisementModel advertisement){
         advertisementRepository.deleteById(advertisement.id);
     }
+
+    public void update(AdvertisementModel advertisement){
+        advertisementRepository.save(advertisement);
+    }
+
+    public AdvertisementModel getAdvertisementById(long advertisementid){
+        return advertisementRepository.findById(advertisementid).get();
+    }
 }
