@@ -18,4 +18,8 @@ public class UserService {
     public User getUserById(long userid){
         return userRepository.findById(userid).get();
     }
+
+    public Iterable<User> fetchAll(){
+        return userRepository.findAll();
+    }
 }
