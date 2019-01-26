@@ -1,24 +1,14 @@
-package com.project.glib.dao.implementations;
+package com.inn_team.lost_and_found.dao.implementations;
 
-import com.project.glib.dao.interfaces.ModifyByLibrarian;
-import com.project.glib.dao.interfaces.UserRepository;
-import com.project.glib.model.User;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import com.inn_team.lost_and_found.dao.interfaces.UserRepository;
+import com.inn_team.lost_and_found.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public class UserDaoImplementation implements ModifyByLibrarian<User> {
-    public static final String REMOVE_USER_HAS_CHECKOUTS_EXCEPTION = "User should return all documents before deleting";
-    private static final Logger logger = (Logger) LoggerFactory.getLogger(com.project.glib.dao.implementations.BookDaoImplementation.class);
-    private static final String TYPE = User.TYPE;
-    private static final String ADD_USER = TYPE + ADD;
-    private static final String UPDATE_USER = TYPE + UPDATE;
-    private static final String REMOVE_USER = TYPE + REMOVE;
-    private static final String LIST = TYPE + ModifyByLibrarian.LIST;
+public class UserDaoImplementation{
     private final UserRepository userRepository;
 
     @Autowired
@@ -26,45 +16,29 @@ public class UserDaoImplementation implements ModifyByLibrarian<User> {
         this.userRepository = userRepository;
     }
 
-    @Override
     public void add(User user) {
         userRepository.saveAndFlush(user);
-        logger.info(ADD_USER + user);
     }
 
-    @Override
     public void update(User user) {
         userRepository.saveAndFlush(user);
-        logger.info(UPDATE_USER + user);
     }
 
-    @Override
-    public void remove(long userId) {
-        userRepository.delete(userId);
-        logger.info(REMOVE_USER + userId);
+    public void remove(long userid) {
+        userRepository.delete(getById(userid));
     }
 
-    @Override
-    @SuppressWarnings("unchecked")
     public List<User> getList() {
-        List<User> users = userRepository.findAll();
-
-        for (User user : users) {
-            logger.info(LIST + user);
-        }
-
-        return users;
+        return userRepository.findAll();
     }
 
-    @Override
     public User getById(long userId) {
-        return userRepository.findOne(userId);
+        return userRepository.findUserById(userId);
     }
 
-    @Override
     public long getId(User user) {
         return userRepository.findAll().stream()
-                .filter(u -> u.getRole().equals(user.getRole()) &&
+                .filter(u ->
                         u.getLogin().equals(user.getLogin()) &&
                         u.getPassword().equals(user.getPassword()) &&
                         u.getName().equals(user.getName()) &&
