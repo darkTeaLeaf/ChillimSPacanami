@@ -1,9 +1,6 @@
 package com.example.demo;
 
-import org.hibernate.annotations.Type;
-
 import javax.persistence.*;
-import java.time.LocalDate;
 
 @Entity
 @Table(name = "advertisements")
@@ -24,6 +21,12 @@ public class AdvertisementModel {
 
     @Column(name = "question")
     private String question;
+
+    @Column(name = "answer")
+    private String answer;
+
+    @Column(name = "answerPerson")
+    private long answerPerson;
 
     @Column(name = "description")
     private String description;

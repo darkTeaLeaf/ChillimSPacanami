@@ -22,4 +22,10 @@ public class UserService {
     public Iterable<User> fetchAll(){
         return userRepository.findAll();
     }
+
+    public boolean getValidatePassword(String login, String password){
+        User user = userRepository.getUserByLogin(login);
+
+        return login.equals(user.login) && password.equals(user.password);
+    }
 }
