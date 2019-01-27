@@ -13,8 +13,8 @@ public class PostingService {
         this.postingRepository = postingRepository;
     }
 
-    Collection<User> findAdvertisementsByAuthorId(long authorId){
-        return  postingRepository.findAllAdvertisementByAuthorId(authorId);
+    Collection<AdvertisementModel> findAdvertisementsByAuthorId(long authorId){
+        return  postingRepository.getAllByAuthor(authorId);
     }
 
 }
