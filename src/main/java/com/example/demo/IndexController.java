@@ -1,9 +1,7 @@
 package com.example.demo;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.Mapping;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.time.LocalDateTime;
@@ -21,20 +19,36 @@ public class IndexController {
         this.userService = userService;
     }
 
-    @PostMapping("/")
-    public ModelAndView index(User user) {
-        System.out.print(user.login);
+//    @RequestMapping(value = "/", method = RequestMethod.POST)
+//    public ModelAndView index(User user) {
+//        userService.addUser(user);
+//        Map<String, String> model = new HashMap<>();
+//        model.put("name", "Alexey");
+//        return new ModelAndView("index", model);
+//    }
+
+    @PostMapping("/registration")
+    public ModelAndView addStudent(@ModelAttribute User user){
         userService.addUser(user);
         Map<String, String> model = new HashMap<>();
-        model.put("name", "Alexey");
-        return new ModelAndView("index", model);
+        model.put("responce", "Added");
+        return new ModelAndView("registration", model);
     }
 
-    @GetMapping("/")
-    public ModelAndView index() {
-        Map<String, Iterable> model = new HashMap<>();
-        Iterable <User> list = userService.fetchAll();
-        model.put("name", list);
-        return new ModelAndView("index", model);
-    }
+//    @PostMapping("/")
+//    public ModelAndView index(User user) {
+//        System.out.print(user.login);
+//        userService.addUser(user);
+//        Map<String, String> model = new HashMap<>();
+//        model.put("name", "Alexey");
+//        return new ModelAndView("index", model);
+//    }
+//
+//    @GetMapping("/")
+//    public ModelAndView index() {
+//        Map<String, Iterable> model = new HashMap<>();
+//        Iterable <User> list = userService.fetchAll();
+//        model.put("name", list);
+//        return new ModelAndView("index", model);
+//    }
 }
