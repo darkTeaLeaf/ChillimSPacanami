@@ -2,6 +2,8 @@ package com.example.demo;
 
 import org.springframework.stereotype.Service;
 
+import java.util.Collection;
+
 @Service
 public class PostingService {
 
@@ -11,5 +13,8 @@ public class PostingService {
         this.postingRepository = postingRepository;
     }
 
+    Collection<User> findAdvertisementsByAuthorId(long authorId){
+        return  postingRepository.findAllAdvertisementByAuthorId(authorId);
+    }
 
 }

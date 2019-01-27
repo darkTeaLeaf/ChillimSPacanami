@@ -15,5 +15,7 @@ public class Posting {
 
     @Column(name = "advertisement")
     private long advertisement;
+
+
 }
 
