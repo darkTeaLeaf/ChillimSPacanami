@@ -4,11 +4,16 @@
         <div id="logo-word" class="logo-inside">Потеряшки</div>
     </div>
 
-    <form action="/registration" method="post">
-        <input type="file" name="image">
-        <input type="text" name="name" placeholder="Имя Фамилия">
-        <input type="tel" name="phone" placeholder="Телефон">
-        <input type="email" name="email" placeholder="Почта">
-        <input type="password" name="password" placeholder="Пароль">
+    <form class="container" action="/registration" method="post">
+        <div class="hidden-scroll">
+            <input id="user-img" type="file" name="image">
+            <input class="field" type="text" name="name" placeholder="Имя">
+            <input class="field" type="text" name="surname" placeholder="Фамилия">
+            <input class="field" type="tel" name="phone" placeholder="Телефон">
+            <input class="field" type="email" name="email" placeholder="Почта">
+            <input class="field" type="password" name="password" placeholder="Пароль">
+        </div>
+
+        <button name="register-btn">Зарегистрироваться</button>
     </form>
 </div>
