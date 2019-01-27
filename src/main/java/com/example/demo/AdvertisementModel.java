@@ -23,13 +23,16 @@ public class AdvertisementModel {
     private String question;
 
     @Column(name = "answer")
-    private String answer;
+    public String answer;
 
     @Column(name = "answerPerson")
-    private long answerPerson;
+    public long answerPerson;
 
     @Column(name = "description")
     private String description;
+
+    @Column(name = "status")
+    public String status;
 
 //    @Column(name = "date")
 //    @Type(type = "com.baeldung.hibernate.customtypes.LocalDateStringType")

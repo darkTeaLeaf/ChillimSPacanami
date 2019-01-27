@@ -26,4 +26,22 @@ public class AdvertisementService {
     public AdvertisementModel getAdvertisementById(long advertisementid){
         return advertisementRepository.findById(advertisementid).get();
     }
+
+    public void decline(long advertisementId){
+        AdvertisementModel advertisement = getAdvertisementById(advertisementId);
+
+        advertisement.answer = null;
+        advertisement.answerPerson = -1;
+        advertisement.status = "not approved";
+
+        update(advertisement);
+    }
+
+    public void accept(long userId, long advertisementId){
+        AdvertisementModel advertisement = getAdvertisementById(advertisementId);
+
+        advertisement.status = "approved";
+
+        update(advertisement);
+    }
 }
