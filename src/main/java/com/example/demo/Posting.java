@@ -8,13 +8,13 @@ public class Posting {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
+    public long id;
 
     @Column(name = "author")
-    private long author;
+    public long author;
 
     @Column(name = "advertisement")
-    private long advertisement;
+    public long advertisement;
 
 
 }
