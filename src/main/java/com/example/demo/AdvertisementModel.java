@@ -34,6 +34,9 @@ public class AdvertisementModel {
     @Column(name = "status")
     public String status;
 
+    @Column(name = "author")
+    public String author;
+
 //    @Column(name = "date")
 //    @Type(type = "com.baeldung.hibernate.customtypes.LocalDateStringType")
 //    private LocalDate date;
