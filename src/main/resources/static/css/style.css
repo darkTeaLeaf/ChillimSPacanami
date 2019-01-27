@@ -8,12 +8,12 @@ body {
     height: 100vh;
 }
 
-/*      TUTORIAL        */
-
 .screen {
     width: 100%;
     height: 100%;
 }
+
+/*      TUTORIAL        */
 
 #tutorial {
     background-color: #00AE68;
@@ -35,6 +35,8 @@ body {
 }
 
 #logo-img {
+    position: relative;
+    top: 10px;
     width: 50px;
     height: 50px;
 }
@@ -44,6 +46,15 @@ body {
     font-weight: 800;
     font-size: 50px;
 
-    line-height: 30px;
     color: white;
+}
+
+/*      REGISTRATION        */
+
+#registration {
+    background-color: #00AE68;
+}
+
+#registration #logo {
+    padding: 30px;
 }
