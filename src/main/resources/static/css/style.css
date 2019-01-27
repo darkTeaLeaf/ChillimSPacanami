@@ -1,6 +1,10 @@
 * {
     margin: 0;
     padding: 0;
+    border: 0;
+    outline: 0;
+
+    font-family: 'Roboto', sans-serif;
 }
 
 body {
@@ -11,6 +15,10 @@ body {
 .screen {
     width: 100%;
     height: 100%;
+}
+
+.container {
+    padding: 0 30px;
 }
 
 /*      TUTORIAL        */
@@ -57,4 +65,53 @@ body {
 
 #registration #logo {
     padding: 30px;
+}
+
+#registration .field {
+    width: -webkit-fill-available;
+    padding: 15px;
+
+    font-size: 20px;
+    margin-bottom: 10px;
+    border-radius: 30px;
+}
+
+#registration form {
+
+}
+
+#registration button {
+    width: 100%;
+    padding: 30px;
+
+    font-size: 20px;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: white;
+
+    background-color: #E60042;
+
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+
+#registration .hidden-scroll {
+    overflow: hidden;
+    padding-bottom: 120px;
+    display: flex;
+    flex-direction: column;
+}
+
+#registration #user-img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: #fff;
+    margin: 50px 0;
+    align-self: center;
+}
+
+#registration #user-img:hover {
+    cursor: pointer;
 }
